@@ -39,7 +39,8 @@ func RunMockServer() {
 
 func createMockRequest(pid int, fn func(), u *User) {
 	fmt.Println("UserID:", u.ID, "\tProcess", pid, "started.")
-	res := HandleRequest(fn, u)
+	app := New(time.Second*10)
+	res := app.HandleRequest(fn, u)
 
 	if res {
 		fmt.Println("UserID:", u.ID, "\tProcess", pid, "done.")
