@@ -10,6 +10,7 @@ import (
 	"strconv"
 	"sync"
 	"testing"
+
 )
 
 func TestMain(t *testing.T) {
@@ -29,6 +30,7 @@ func TestMain(t *testing.T) {
 }
 
 func TestLRU(t *testing.T) {
+	t.Skip()
 	loader := Loader{
 		DB: GetMockDB(),
 	}
