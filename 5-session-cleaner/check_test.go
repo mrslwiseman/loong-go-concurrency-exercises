@@ -8,6 +8,7 @@ import (
 func TestSessionManagersCreationAndUpdate(t *testing.T) {
 	// Create manager and new session
 	m := NewSessionManager()
+	m.StartSessionMonitor()
 	sID, err := m.CreateSession()
 	if err != nil {
 		t.Error("Error CreateSession:", err)
@@ -38,6 +39,7 @@ func TestSessionManagersCreationAndUpdate(t *testing.T) {
 
 func TestSessionManagersCleaner(t *testing.T) {
 	m := NewSessionManager()
+	m.StartSessionMonitor()
 	sID, err := m.CreateSession()
 	if err != nil {
 		t.Error("Error CreateSession:", err)
@@ -53,6 +55,7 @@ func TestSessionManagersCleaner(t *testing.T) {
 
 func TestSessionManagersCleanerAfterUpdate(t *testing.T) {
 	m := NewSessionManager()
+	m.StartSessionMonitor()
 	sID, err := m.CreateSession()
 	if err != nil {
 		t.Error("Error CreateSession:", err)
