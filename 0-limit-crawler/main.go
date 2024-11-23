@@ -37,7 +37,6 @@ func Crawl(url string, depth int, wg *sync.WaitGroup, ticker *time.Ticker) {
 		// Do not remove the `go` keyword, as Crawl() must be
 		// called concurrently
 		<-ticker.C
-		fmt.Println("tick")
 		go Crawl(u, depth-1, wg, ticker)
 	}
 }
